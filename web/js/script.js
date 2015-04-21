@@ -13,8 +13,7 @@ $(document).on("ready",function(){
 	});
 
 
-
-	$('#estadoaBuscar').keyup(function() {
+$('#estadoaBuscar').keyup(function() {
 	  	$('.buscar').css('display','block');
 	  	var busqueda = $("#estadoaBuscar").val();
 
@@ -316,11 +315,11 @@ var valorColor = 0;
 	}
 
 function seleccionarEstadoa(id, estadoA, pais) {
-	alert("Paso 1");
+
 	$('.buscar').css('display','none');
 	$("#idEstadoA").val(id);
 	$("#estadoaBuscar").val(estadoA);
-	alert("Paso 2");
+	
 	$("#paisNombre").html(pais);
 	console.log("none");
 }
