@@ -27,15 +27,15 @@
            
            <div class="td"  style="width:16%"><b><fmt:message key="formaListadoAutos.etiqueta.administracion" /></b></div>
           </div>
-        <c:forEach var="auto" items="${FormaListadoAutosOrdenar.autos}">
+        <c:forEach var="auto" items="${formaListadoAutosOrdenar.autos}">
             <div class="tr">
                 <div class="td" align="left" style="width:16%"><c:out value="${auto.marca}"/></div>
                 <div class="td" align="left" style="width:16%"><c:out value="${auto.color}"/></div>
                 <div class="td" align="left" style="width:16%"><c:out value="${auto.placas}"/></div>
                 <div class="td" align="left" style="width:16%"><c:out value="${auto.propietario}"/></div>
                 <div class="td" align="left" style="width:16%">
-                  <c:forEach var="auto" items="${FormaListadoAutosOrdenar.estadosa}">
-                    <c:if test="${estadoa.id == auto.idEstadoa}">
+                  <c:forEach var="estadoa" items="${formaListadoAutosOrdenar.estadosa}">
+                    <c:if test="${estadoa.id == auto.idEstado}">
                       <c:out value="${estadoa.nombre}"/>
                     </c:if>
                   </c:forEach>
@@ -43,12 +43,12 @@
                 </div>
                 <div class="td" align="left" style="width:16%">
                 <!--    <a href='solicitarModificarPersona.do?id=<c:out value="${persona.id}"/>'
-					   class="HipervinculoAdmon">
+             class="HipervinculoAdmon">
                         <fmt:message key="formaListadoPersonasOrdenar.etiqueta.modificar" />
                     </a>-->
                     <a href='procesarEliminarAuto.do?id=<c:out value="${auto.id}"/>'
-					   onClick="javascript: return EliminarAuto('<c:out value="${auto.marca}"/>')"
-					   class="HipervinculoAdmon">
+             onClick="javascript: return EliminarAuto('<c:out value="${auto.marca}"/>')"
+             class="HipervinculoAdmon">
                         <fmt:message key="formaListadoAutosOrdenar.etiqueta.eliminar" />
                     </a>
                 </div>
